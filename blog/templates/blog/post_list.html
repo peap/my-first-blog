@@ -9,5 +9,14 @@
               Django Girls Tutorial Blog
           </a>
       </h1>
+      {% for post in posts %}
+          <div id="post-{{ post.id }}">
+              <p>published: {{ post.published_date }}</p>
+              <h2>
+                  <a href="#post-{{ post.id }}">{{ post.title }}</a>
+              </h2>
+              <p>{{ post.text|linebreaks }}</p>
+          </div>
+      {% endfor %}
     </body>
 </html>
